@@ -1,0 +1,41 @@
+# 1. 런타임 및 종속성 (새 환경에서 다시 채워넣을 부분)
+node/
+python/
+node_modules/
+cache/
+dist/
+
+# 2. 로그 및 임시 파일
+output.log
+config/.gemini/tmp/
+config/.cache/
+
+# 3. 설정 및 보안
+config/AppData/
+config/mcp-profile/
+config/.antigravity/
+config/.cache/
+config/.gemini/antigravity/
+config/.gemini/history/
+config/.gemini/installation_id
+config/.gemini/settings.json
+.env
+
+# 4. JSON 파일 관리
+*.json
+!package.json
+!package-lock.json
+!config/.gemini/settingsex.json
+!config/.gemini/settings.example.json
+
+# 5. MCP 디렉토리
+MCP/*/node_modules/
+MCP/*/venv/
+MCP/*/.git/
+MCP/*/__pycache__/
+
+!config/.gemini/GEMINI.md
+!README.md
+!start-gemini.bat
+!patch-sandbox.js
+!MCP/
