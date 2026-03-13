@@ -15,10 +15,10 @@
     "github": {
       "command": "node",
       "args": [
-        "MCP\\github-server\\node_modules\\@modelcontextprotocol\\server-github\\dist\\index.js"
+        "./MCP/github-server/node_modules/@modelcontextprotocol/server-github/dist/index.js"
       ],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN_HERE"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
       }
     },
     "word-document-server": {
@@ -30,20 +30,25 @@
         "MCP_TRANSPORT": "stdio"
       }
     },
+    "playwright": {
+      "command": "node",
+      "args": [
+        "./MCP/playwright-MCP-Server/node_modules/@executeautomation/playwright-mcp-server/dist/index.js"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "./cache/ms-playwright"
+      }
+    },
     "chrome-devtools": {
       "command": "npx",
       "args": [
         "-y",
         "chrome-devtools-mcp@latest",
         "--no-usage-statistics"
-      ]
-    },
-    "browsermcp": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@browsermcp/mcp@latest"
-      ]
+      ],
+      "env": {
+        "CHROME_PATH": "%GOOGLE_CHROME_BIN%"
+      }
     },
     "fetch": {
       "command": "npx",
@@ -51,16 +56,6 @@
         "-y",
         "mcp-fetch-server"
       ]
-    },
-    "playwright": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@executeautomation/playwright-mcp-server"
-      ],
-      "env": {
-        "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "1"
-      }
     },
     "kubernetes": {
       "command": "npx",

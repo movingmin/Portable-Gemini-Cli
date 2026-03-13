@@ -6,12 +6,15 @@ cache/
 dist/
 
 # 2. 로그 및 임시 파일
-output.log
+*.log
 config/.gemini/tmp/
 config/.cache/
+.DS_Store
+Thumbs.db
 
 # 3. 설정 및 보안
 config/AppData/
+config/Downloads/
 config/mcp-profile/
 config/.antigravity/
 config/.cache/
@@ -20,6 +23,7 @@ config/.gemini/history/
 config/.gemini/installation_id
 config/.gemini/settings.json
 .env
+
 
 # 4. JSON 파일 관리
 *.json
