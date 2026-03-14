@@ -19,28 +19,10 @@
 
 ## 2. MCP 서버 및 브라우저 환경 설정
 
-프로젝트에 포함된 MCP 서버들은 최초 실행 시 각각의 의존성을 설치해 줘야 합니다.
+상세한 MCP 서버 설치 방법(Node.js/Python 의존성 설치) 및 브라우저 환경 설정(Playwright 등)은 **[`./MCP/README.md`](./MCP/README.md)** 파일을 참고해 주세요.
 
 ### 설정 파일 준비 (필수)
 - `./config/.gemini/settings.example.json` 파일을 복사하여 **`settings.json`**으로 이름을 바꾼 뒤, 본인의 Gemini API Key를 입력하세요.
-
-### 개별 MCP 서버 설치
-`node_modules`나 가상환경은 `.gitignore`에 의해 제외되어 있으므로 최초 1회 수동 설치가 필요합니다.
-
-1. **github-server (Node.js)**:
-   - `MCP/github-server` 이동 후 `../../node/npm install` 실행
-2. **Office-Word-MCP-Server (Python)**:
-   - **출처**: [GongRzhe/Office-Word-MCP-Server](https://github.com/GongRzhe/Office-Word-MCP-Server.git)
-   - **방법**: `MCP/Office-Word-MCP-Server` 이동 후 `../../python/python.exe setup_mcp.py`를 실행하여 환경 구성 및 서버 설정을 진행하세요.
-3. **playwright-MCP-Server (Node.js)**:
-   - `MCP/playwright-MCP-Server` 이동 후 `../../node/npm install` 실행
-
-### Playwright 브라우저 설치
-브라우저 자동화 도구(playwright, browsermcp 등)를 사용하려면 브라우저 바이너리가 필요합니다.
-- 프로젝트 루트에서 다음 명령어를 실행하여 USB 내 `cache/` 폴더에 브라우저를 설치합니다.
-  ```cmd
-  node\npx playwright install chromium
-  ```
 
 ## 3. 프로젝트 구조 (Project Tree)
 
@@ -53,8 +35,11 @@
 │   ├── .gemini/            # Gemini CLI 전용 설정 (GEMINI.md, settings.json 등)
 │   └── AppData/            # 샌드박스 격리용 앱 데이터 (브라우저 프로필 등)
 ├── MCP/                    # Model Context Protocol 서버 모음
-│   ├── github-server       # GitHub 연동 서버 (소스 코드 포함)
-│   └── Office-Word-MCP-Server # 워드 문서 제어 서버 (소스 코드 포함)
+│   ├── README.md           # MCP 서버 설치 및 설정 가이드
+│   ├── github-server       # GitHub 연동 서버 (Node.js)
+│   ├── Office-Word-MCP-Server # 워드 문서 제어 서버 (Python)
+│   ├── Office-PowerPoint-MCP-Server # 파워포인트 제어 서버 (Python)
+│   └── playwright-MCP-Server # 브라우저 제어 서버 (Node.js)
 ├── node_modules/           # Gemini CLI 코어 및 종속성 (자동 생성)
 ├── start-gemini.bat        # 포터블 환경 실행 진입점 (CLI 자동 설치 포함)
 ├── start-portable-shell.bat # 포터블 런타임 환경의 CMD 셸 실행

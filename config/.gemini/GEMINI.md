@@ -6,3 +6,7 @@
 /memory add USB 내의 Portable Python 3.13.10과 Node.js를 자유롭게 활용할 수 있습니다.
 /memory add patch-sandbox.js가 적용되어 있어 USB 외부의 호스트 파일 시스템도 직접 수정할 수 있음을 인지하고 작업합니다.
 /memory add 로컬 MCP 서버는 \MCP 폴더를 기반으로 작동하며 설정은 \config.gemini\settings.json에 위치합니다.
+
+## PowerPoint 생성 지침
+- 슬라이드를 추가할 때는 항상 `layout_index: 6` (빈 화면/Blank)을 사용하여 기존 Placeholder와 겹치지 않게 합니다.
+- 모든 요소(텍스트 박스, 이미지, 표)는 빈 화면 위에 직접 위치를 지정하여 배치합니다.
