@@ -18,7 +18,17 @@
         "./MCP/github-server/node_modules/@modelcontextprotocol/server-github/dist/index.js"
       ],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN_HERE"
+      }
+    },
+    "notionApi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
+      "env": {
+        "NOTION_TOKEN": "YOUR_NOTION_TOKEN_HERE"
       }
     },
     "word-document-server": {
@@ -29,6 +39,32 @@
       "env": {
         "MCP_TRANSPORT": "stdio"
       }
+    },
+    "ppt-server": {
+      "command": "./python/python.exe",
+      "args": [
+        "./MCP/Office-PowerPoint-MCP-Server/ppt_mcp_server.py"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio",
+        "PPT_TEMPLATE_PATH": "./MCP/Office-PowerPoint-MCP-Server/templates"
+      }
+    },
+    "excel": {
+      "command": "./python/python.exe",
+      "args": [
+        "-m",
+        "excel_mcp",
+        "stdio"
+      ]
+    },
+    "pdf-math-translate": {
+      "command": "./python/python.exe",
+      "args": [
+        "-m",
+        "pdf2zh",
+        "--mcp"
+      ]
     },
     "playwright": {
       "command": "node",

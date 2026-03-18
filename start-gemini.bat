@@ -14,6 +14,7 @@ set "APPDATA=%PROJECT_ROOT%\config\AppData\Roaming"
 set "LOCALAPPDATA=%PROJECT_ROOT%\config\AppData\Local"
 set "TEMP=%PROJECT_ROOT%\cache\temp"
 set "TMP=%PROJECT_ROOT%\cache\temp"
+set "HF_HUB_DISABLE_SYMLINKS_WARNING=1"
 if not exist "%TEMP%" mkdir "%TEMP%"
 
 :: 3. 모든 캐시 경로를 루트의 cache 폴더로 강제 고정

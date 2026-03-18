@@ -10,6 +10,9 @@ $env:APPDATA = "$PROJECT_ROOT\config\AppData\Roaming"
 $env:LOCALAPPDATA = "$PROJECT_ROOT\config\AppData\Local"
 $env:TEMP = "$PROJECT_ROOT\cache\temp"
 $env:TMP = "$PROJECT_ROOT\cache\temp"
+$env:HF_HOME = "$PROJECT_ROOT\cache\huggingface"
+$env:HF_HUB_DISABLE_SYMLINKS_WARNING = "1"
+$env:PY2ZH_CACHE = "$PROJECT_ROOT\cache\pdf2zh"
 
 if (-not (Test-Path -Path $env:TEMP)) {
     New-Item -ItemType Directory -Path $env:TEMP -Force | Out-Null
