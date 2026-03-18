@@ -34,7 +34,7 @@
 ### 📝 word-document-server (Python)
 - **역할**: Microsoft Word 문서(.docx) 생성, 텍스트 삽입, 이미지 배치, 각주/미주 관리 및 PDF 변환을 지원합니다.
 - **위치**: `MCP/Office-Word-MCP-Server`
-- **설치**: `../../python/python.exe setup_mcp.py`를 실행하여 환경 구성 및 서버 설정을 진행하세요.
+- **설치**: `../../python/python.exe -m pip install -r requirements.txt` 실행
 
 ### 🖼️ ppt-server (Python)
 - **역할**: PowerPoint 슬라이드(.pptx) 생성, 레이아웃 관리, 텍스트 박스 및 이미지의 정밀한 위치 배치를 자동화합니다.
