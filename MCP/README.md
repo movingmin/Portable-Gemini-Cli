@@ -1,6 +1,16 @@
 # Model Context Protocol (MCP) Servers
 
-이 디렉터리는 Gemini CLI에서 사용하는 MCP(Model Context Protocol) 서버들을 포함하고 있습니다. 각 서버는 최초 실행 전 의존성 설치가 필요합니다.
+이 디렉터리는 Gemini CLI에서 사용하는 MCP(Model Context Protocol) 서버들을 포함하고 있습니다.
+
+## 0. 저장소 구조 및 환경 구성 안내 (필독)
+
+이 프로젝트는 쾌적하고 가벼운 저장소 상태를 유지하기 위해, 언제든 다시 생성할 수 있는 아래 항목들을 원격 저장소에서 제외하고 소스 코드 중심으로 관리하고 있습니다.
+
+*   **제외된 항목:** `node_modules/`, `venv/`, `__pycache__/`, `.git/` 등 의존성 라이브러리와 실행 캐시 파일들
+*   **이유:** 각 운영체제와 환경에 맞는 최적의 라이브러리를 설치하여 실행하기 위함이며, 저장소 용량을 줄여 더 빠르게 내려받을 수 있게 하기 위함.
+*   **준비 사항:** 프로젝트를 처음 내려받는다면, 각 서버 폴더로 이동하여 아래 안내된 설치 명령어를 한 번씩 실행해 주세요. 소스 코드는 모두 안전하게 포함되어 있으니, 필요한 도구들만 채우면 바로 사용할 수 있습니다. npx는 안해도 됨
+
+---
 
 ## 1. 개별 MCP 서버 역할 및 설정
 
@@ -14,7 +24,7 @@
 ### 📝 notionApi (Node.js/npx)
 - **역할**: Notion API를 통해 데이터베이스 조회, 페이지 생성/수정, 콘텐츠 관리를 수행합니다.
 - **위치**: `../cache/` 디렉터리 아래에 npx로 설치
-- **설치**: `../../node/npx -y @notionhq/notion-mcp-server` ## settings.json에 작성되어 있어서 최초실행시 자동설치(설정파일에 NOTION_TOKEN="YOUR_NOTION_TOKEN_HERE" 입력 필요)
+- **설치**: `../../node/npx -y @notionhq/notion-mcp-server` ## settings.json에 작성되어 있어서 최초 실행시 자동설치(설정파일에 NOTION_TOKEN="YOUR_NOTION_TOKEN_HERE" 입력 필요)
 
 ### 📊 excel (Python)
 - **역할**: Excel 파일(.xlsx, .csv)의 데이터를 읽고 쓰고, 셀 서식 및 시트 구조를 자동화합니다.
@@ -39,7 +49,7 @@
 ### 🔍 chrome-devtools (Node.js/npx)
 - **역할**: 크롬 개발자 도구를 통해 웹 페이지의 DOM 구조를 분석하고, CSS 스타일을 검사하며, JavaScript 코드를 실행하여 동적인 웹 콘텐츠를 제어합니다.
 - **위치**: `../cache/` 디렉터리 아래에 npx로 설치
-- **설치**: `../../node/npx -y chrome-devtools-mcp@latest` ## settings.json에 작성되어 있어서 최초실행시 자동설치
+- **설치**: `../../node/npx -y chrome-devtools-mcp@latest` ## settings.json에 작성되어 있어서 최초 실행시 자동설치
 
 ### 📡 fetch (Node.js/npx)
 - **역할**: HTTP/HTTPS 프로토콜을 사용하여 웹 리소스에 접근하고 데이터를 가져옵니다. REST API 호출, 파일 다운로드, 웹 콘텐츠 스크래핑 등 범용적인 네트워크 통신을 지원합니다.
@@ -49,7 +59,7 @@
 ### 📦 kubernetes (Node.js/npx) (**아직 사용 되는지 확인 안됨**)
 - **역할**: 쿠버네티스 클러스터의 리소스를 관리하고 모니터링합니다. Pod, Service, Deployment, ConfigMap 등 다양한 쿠버네티스 리소스를 조회, 생성, 수정, 삭제할 수 있습니다.
 - **위치**: `../cache/` 디렉터리 아래에 npx로 설치
-- **설치**: `../../node/npx -y kubernetes-mcp-server@latest` ## settings.json에 작성되어 있어서 최초실행시 자동설치
+- **설치**: `../../node/npx -y kubernetes-mcp-server@latest` ## settings.json에 작성되어 있어서 최초 실행시 자동설치
 
 ## 2. Playwright 브라우저 설치
 Playwright 브라우저 자동화 도구를 실행하지 못하는 경우, 브라우저 바이너리가 필요할 수도 있습니다.. 프로젝트 루트에서 다음 명령어를 실행하여 USB 내 `cache/` 폴더에 브라우저를 설치합니다.
