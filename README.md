@@ -12,10 +12,12 @@
   - **링크**: [Node.js 정식 다운로드](https://nodejs.org/ko/download)
   - **방법**: Windows용 `.zip` (64-bit) 파일을 다운로드하여 압축 해제
   - **위치**: `./node/` (내부에 `node.exe`가 바로 위치해야 함)
+  - **버전**: v22.22.1(LTS)
 - **Python (`python/` 폴더)**:
   - **링크**: [Python Windows Releases](https://www.python.org/downloads/windows/)
   - **방법**: `Windows embeddable package` 다운로드하여 압축 해제
   - **위치**: `./python/` (내부에 `python.exe`가 바로 위치해야 함)
+  - **버전**: 3.13.10
 
 ## 2. MCP 서버 및 브라우저 환경 설정
 
@@ -64,7 +66,7 @@
 2. `config/.gemini/settings.json` 설정이 완료되었는지 확인합니다.
 3. **`start-gemini.bat`** 파일을 실행합니다.
 4. 최초 실행 시 CLI 코어가 없는 경우 자동으로 `npm install`을 진행한 뒤 구동됩니다.
--  CLI 실행 시 업데이트 문구가 뜨는 경우, **`start-portable-shell.bat`**을 실행하여 셸을 띄운 후, 프로젝트 루트 디렉터리에서 **npm install -g @google/gemini-cli** 를 입력하여 업데이트를 진행하세요. (자동 업데이트 안해줌)
+-  CLI 실행 시 업데이트 문구가 뜨는 경우, **`start-portable-shell.bat`**을 실행하여 셸을 띄운 후, 프로젝트 루트 디렉터리에서 **npm install @google/gemini-cli@latest** 를 입력하여 업데이트를 진행하세요. (자동 업데이트 안해줌)
 - GEMINI에게 지침을 내려주고 싶은 경우, **./config/.gemini/GEMINI.md** 파일에 지침을 작성하세요.
 
 
